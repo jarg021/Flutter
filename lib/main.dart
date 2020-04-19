@@ -13,13 +13,24 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Hola Mundo"),
         ),
-        body:Column(children: [
-        Text("The question"),
-        RaisedButton(child:Text("Answer 1"),onPressed: null),
-        RaisedButton(child:Text("Answer 2"),onPressed: null),
-        RaisedButton(child:Text("Answer 3"),onPressed: null),
+        body: Column(children: [
+          Text("The question"),
+          RaisedButton(child: Text("Answer 1"), onPressed: answerQuetion),
+          RaisedButton(
+              child: Text("Answer 2"),
+              onPressed: () => print("press answerQuestion2")
+          ),
+          RaisedButton(
+              child: Text("Answer 3"),
+              onPressed: () {
+                print("press answerQuestion3");
+              }),
         ]),
       ),
     );
+  }
+
+  void answerQuetion() {
+    print("Press answerQuestion");
   }
 }
