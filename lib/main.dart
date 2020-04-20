@@ -8,11 +8,11 @@ class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return MyappState();
+    return _MyappState();
   }
 }
 
-class MyappState extends State<MyApp> {
+class _MyappState extends State<MyApp> {
   var indexQuestion = 0;
     void answerQuetion() {
       setState(() {
