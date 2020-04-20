@@ -29,15 +29,11 @@ class _MyappState extends State<MyApp> {
     var _questions = [
       {
         "questionText": "What is your favorite Color?",
-        "Answer1": "Red",
-        "Answer2": "Blue",
-        "Answer3": "Yellow",
+        "answers": ["Red","Blue","Yellow","Black"]
       },
       {
         "questionText": "What is your favorite animal?",
-        "Answer1": "pyhotn",
-        "Answer2": "dog",
-        "Answer3": "cat",
+        "answers": ["pyhotn","dog","cat"]
       }
     ];
 
@@ -48,9 +44,9 @@ class _MyappState extends State<MyApp> {
         ),
         body: Column(children: [
           Questions(_questions[indexQuestion]["questionText"]),
-          Answer(_answerQuetion, _questions[indexQuestion]["Answer1"]),
-          Answer(_answerQuetion,  _questions[indexQuestion]["Answer2"]),
-          Answer(_answerQuetion,  _questions[indexQuestion]["Answer3"]),
+          ...(_questions[indexQuestion]["answers"] as List<String>).map((answer){
+            return Answer(_answerQuetion,answer);
+          }).toList()
         ]),
       ),
     );
