@@ -14,7 +14,7 @@ class MyApp extends StatefulWidget {
 
 class _MyappState extends State<MyApp> {
   var indexQuestion = 0;
-    void answerQuetion() {
+    void _answerQuetion() {
       setState(() {
         indexQuestion = indexQuestion + 1;
       });
@@ -24,7 +24,7 @@ class _MyappState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
+    var _questions = [
       "What is your favorite Color?",
       "What is your favorite animal?",
     ];
@@ -35,12 +35,12 @@ class _MyappState extends State<MyApp> {
           title: Text("Hola Mundo"),
         ),
         body: Column(children: [
-          Text(questions[indexQuestion]),
-          RaisedButton(child: Text("Answer 1"), onPressed: answerQuetion),
-          RaisedButton(child: Text("Answer 2"), onPressed: answerQuetion),
+          Text(_questions[indexQuestion]),
+          RaisedButton(child: Text("Answer 1"), onPressed: _answerQuetion),
+          RaisedButton(child: Text("Answer 2"), onPressed: _answerQuetion),
           RaisedButton(
             child: Text("Answer 3"),
-            onPressed: (answerQuetion),
+            onPressed: (_answerQuetion),
           ),
         ]),
       ),
